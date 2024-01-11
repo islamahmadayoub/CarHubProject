@@ -1,0 +1,89 @@
+<!--
+ - Created by islam on 12/26/2023.
+ -->
+
+<!-- Car Filters -->
+<template>
+    <lightning-card
+            title="Car Filters">
+        <lightning-button-icon
+                icon-name           =   "action:filter"
+                variant             =   "brand"
+                alternative-text    =   "Show More"
+                slot                =   "actions">
+        </lightning-button-icon>
+
+        <!-- Search Section -->
+        <section>
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input
+                        type        =   "text"
+                        label       =   "Search Key"
+                        placeholder =   "type here..."
+                        onkeyup     =   {onSearch}>
+                </lightning-input>
+            </div>
+        </section>
+
+        <!-- Slider Section -->
+        <section>
+            <div class="slds-p-around_medium">
+                <lightning-slider
+                        label       =   "Max Price"
+                        max         =   999999
+                        value       =   {maxPrice}
+                        onchange    =   {onSlide}>
+                </lightning-slider>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section>
+            <div        class           =   "slds-p-around_medium">
+                <template
+                        lwc:if          =   {displayedCategories}>
+                    <h2>Select Category</h2>
+                    <template
+                            for:each    =   {displayedCategories.values}
+                            for:item    =   "Category">
+                        <lightning-input
+                                key     =   {Category.value}
+                                data-id =   {Category.value}
+                                type    =   "checkbox"
+                                label   =   {Category.label}
+                                checked
+                                onchange=   {onCategoryChange}>
+                        </lightning-input>
+                    </template>
+                </template>
+            </div>
+        </section>
+
+        <!-- Make Section -->
+        <section>
+            <div        class           =   "slds-p-around_medium">
+                <template
+                        lwc:if          =   {displayedMakes}>
+                    <h2>Select Make</h2>
+                    <template
+                            for:each    =   {displayedMakes.values}
+                            for:item    =   "make">
+                        <lightning-input
+                                key     =   {make.value}
+                                data-id =   {make.value}
+                                type    =   "checkbox"
+                                label   =   {make.label}
+                                checked
+                                onchange=   {onMakeChange}>
+                        </lightning-input>
+                    </template>
+                </template>
+            </div>
+        </section>
+
+
+
+
+
+    </lightning-card>
+</template>

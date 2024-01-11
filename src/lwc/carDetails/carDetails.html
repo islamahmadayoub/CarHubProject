@@ -1,0 +1,92 @@
+<!--
+ - Created by islam on 12/26/2023.
+ -->
+
+<!-- Car Details -->
+<template>
+    <template lwc:if={selectedCar.data}>
+        <lightning-card  title={selectedCar.data.fields.Name.value}>
+            <!-- Icon -->
+            <lightning-button-icon  icon-name="utility:chart" variant="brand" alternative-text="Show More" slot="actions"></lightning-button-icon>
+
+            <!-- Image -->
+            <div>
+                <img class="slds-align_absolute-center" src={selectedCar.data.fields.Picture_URL__c.value} alt="CarImage" width=400px>
+            </div>
+
+
+            <!-- Features Containers-->
+            <div class="slds-p-around_medium slds-align_absolute-center slds-grid" style='width: 300px;'>
+
+                <!-- Left Column -->
+                <div class="slds-col">
+                    <!-- Category Key -->
+                    <div>
+                        <p>Category</p>
+                    </div>
+                    <!-- Make Key -->
+                    <div>
+                        <p>Make</p>
+                    </div>
+                    <!-- MSRP Key -->
+                    <div>
+                        <p>MSRP</p>
+                    </div>
+                    <!-- Fuel Type Key -->
+                    <div>
+                        <p>Fuel Type</p>
+                    </div>
+                    <!-- Number of Seats Key -->
+                    <div>
+                        <p>Number of Seats</p>
+                    </div>
+                    <!-- Control Key -->
+                    <div>
+                        <p>Control</p>
+                    </div>
+
+                </div>
+
+                <!-- Right Column -->
+                <div class="slds-col">
+                    <!-- Category Value -->
+                    <div>
+                        <p><strong>{selectedCar.data.fields.Category__c.value}</strong></p>
+                    </div>
+                    <!-- Make Value -->
+                    <div>
+                        <p><strong>{selectedCar.data.fields.Make__c.value}</strong></p>
+                    </div>
+                    <!-- MSRP Value -->
+                    <div>
+                        <p><strong>USD {selectedCar.data.fields.MSRP__c.value}</strong></p>
+                    </div>
+                    <!-- Fuel Type Value -->
+                    <div>
+                        <p><strong>{selectedCar.data.fields.Fuel_Type__c.value}</strong></p>
+                    </div>
+                    <!-- Number of Seats Value -->
+                    <div>
+                        <p><strong>{selectedCar.data.fields.Number_of_Seats__c.value}</strong></p>
+                    </div>
+                    <!-- Control Value -->
+                    <div>
+                        <p><strong>{selectedCar.data.fields.Control__c.value}</strong></p>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+        </lightning-card>
+    </template>
+
+</template>

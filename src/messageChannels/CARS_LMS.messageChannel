@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Cars LMS</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Message Channel to pass data between Car Components</description>
+
+    <!--        Field 1: Search Key -->
+    <lightningMessageFields>
+        <fieldName>SearchKeyword</fieldName>
+        <description>filter cars by search key</description>
+    </lightningMessageFields>
+
+    <!--        Field 2: Max Price -->
+    <lightningMessageFields>
+        <fieldName>MaxPrice</fieldName>
+        <description>filter cars by max price</description>
+    </lightningMessageFields>
+
+    <!--        Field 3: Selected Categories -->
+    <lightningMessageFields>
+        <fieldName>SelectedCategories</fieldName>
+        <description>filter cars by Selected Categories</description>
+    </lightningMessageFields>
+
+    <!--        Field 4: Selected Makes -->
+    <lightningMessageFields>
+        <fieldName>SelectedMakes</fieldName>
+        <description>filter cars by Selected Makes</description>
+    </lightningMessageFields>
+
+    <!--        Field 5: CAR ID -->
+    <lightningMessageFields>
+        <fieldName>carId</fieldName>
+        <description>Display One car</description>
+    </lightningMessageFields>
+
+</LightningMessageChannel>

@@ -1,0 +1,35 @@
+<!--
+ - Created by islam on 12/26/2023.
+ -->
+
+<!-- Car Tiles -->
+<template>
+    <div class="slds-color__background_gray-5 ">
+            <div class="slds-grid slds-gutters slds-wrap slds-p-around_medium slds-text-align_center">
+                <template lwc:if={cars.data}>
+                    <template for:each={cars.data}
+                              for:item='car'>
+
+                        <lightning-card
+                                key     =   {car.Id}
+                                data-id =   {car.Id}
+                                data-fuel = {car.Fuel_Type__c}
+                                class   =   "slds-col slds-m-vertical_small"
+                                onclick =   {onCarSelect}>
+
+                            <div>
+                                <img src={car.Picture_URL__c}
+                                     alt="CarImage"
+                                     width=200px>
+                            </div>
+
+                            <p> <strong>{car.Name}</strong></p>
+
+                            <p>MSRP: USD {car.MSRP__c}</p>
+
+                        </lightning-card>
+                    </template>
+                </template>
+            </div>
+    </div>
+</template>
