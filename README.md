@@ -84,6 +84,7 @@ A more details view of the selected car that shows the following info
 | SUV       |           | Renault | 
 
 
+This project is part of Salesforce Troop Udemy course, I designed and built this with the knowledge I learned and the approach and the solution are different than the solution in the course. 
 
 
 
